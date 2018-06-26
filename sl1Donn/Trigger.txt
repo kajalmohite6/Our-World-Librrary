@@ -1,0 +1,53 @@
+
+
+CREATE TRIGGER Update_SoldBooksCount 
+AFTER INSERT ON Purchase_and_Deliver
+FOR EACH ROW 
+BEGIN
+UPDATE SoldBooksCount SET new.count = old.count + 1 WHERE new.BId = old.BId
+END
+
+
+
+
+
+
+DELIMITER $$
+
+CREATE TRIGGER Update_SoldBooksCount1 
+AFTER INSERT ON Purchase_and_Deliver
+FOR EACH ROW 
+BEGIN
+UPDATE SoldBooksCount SET NEW.count = OLD.count + 1 WHERE NEW.BId = OLD.BId ;
+END$$
+
+DELIMITER;
+
+
+
+
+
+CREATE TRIGGER Best10Customer 
+AFTER INSERT ON Purchase_and_Deliver
+FOR EACH ROW 
+BEGIN
+UPDATE top10Customer SET count = count + 1 WHERE User_Id = new.User_Id;
+END
+
+
+
+DELIMITER $$
+CREATE TRIGGER before_employee_update 
+    BEFORE UPDATE ON employees
+    FOR EACH ROW 
+BEGIN
+    INSERT INTO employees_audit
+    SET action = 'update',
+     employeeNumber = OLD.employeeNumber,
+        lastname = OLD.lastname,
+        changedat = NOW(); 
+END$$
+DELIMITER ;
+
+
+

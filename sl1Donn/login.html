@@ -1,0 +1,129 @@
+<html>
+<head>
+  <link rel="icon" type="image/png" href="pictures/logo.png" />
+  <style>
+  .error{color:#FF0000;}
+ 
+  body
+  {
+     background-image: url("pictures/image4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+    font-family: "Times New Roman", Georgia, Serif;
+  }
+
+  table {
+    width: 60%;
+  }
+
+  table, th, td {
+    border: 0.1px  black;
+
+  }
+
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+
+  tr:hover {background-color:  #ffd6cc}
+
+  th {
+    background-color: black;
+    color: red;
+  }
+
+  th, td {
+    border-bottom: 0.1px;
+  } 
+
+  tr.noBorder td {
+    border: 0;
+  }
+  h1 {
+    color: white;
+    margin-left: 20px;
+    text-shadow: 3px 2px red;
+  }
+  .button4 {
+
+    padding: 8px 100px;
+  }
+
+ 
+
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<link rel="stylesheet" type="text/css" href="f1.css">
+<script type="text/javascript">
+
+  function formvalidator()
+  {
+   var em = document.forms["form1"]["email"].value;
+   var atpos = em.indexOf("@");
+   var dotpos = em.lastIndexOf(".");
+   if(em == null || em=="")
+   {
+    alert("Email field must not be empty");
+    document.form1.email.focus();
+    return false;
+  } 
+  if (atpos<1 || dotpos<atpos+2 || dotpos+2>=em.length)
+  {
+    alert("Enter proper e-mail address");
+    document.form1.email.focus();
+    return false;
+  }
+
+  var password = document.forms["form1"]["password"].value;	
+  if(document.form1.password.value == "" ||document.form1.password.value == null)
+  {
+    alert("*Please Enter Password");
+    document.form1.password.focus();
+    return false;
+  }
+  return(true);
+}
+
+</script>
+</head> 
+<body>
+  <div id="myDIV"></div>
+  <form action="login.php" name="form1" onsubmit="return formvalidator();" method="post">
+     <div style="background-color:#5499C7;margin-left: 330px ;width: 500px;height: 450px">
+    <center><h1>Login</h1></center>
+    <table align="center" style="z-index: 1">
+      <div class="" style="color: black;">
+        <tr>
+          <td>E-mail ID</td>
+          <td><input type="text" name="email">
+          </td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><input type="password" name="password" id="pass1">
+          </td>
+        </tr>
+      </div>
+    </table>
+    <div class="w3-container w3-center">
+      <div class="button4">
+        <input type="submit" name="submit" value="Submit"> 
+      </div>
+    </div>
+  </div>
+  </form>
+</body>
+</html>
+
+
+
+
+
+

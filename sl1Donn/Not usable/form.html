@@ -1,0 +1,207 @@
+<html>
+<head>
+<style>
+     .error{color:#FF0000;}
+     body
+     {
+         
+         font-family:Comic Sans MS;
+         color: yellow;
+      }
+    td.fc
+     {
+          font-size:20px;
+          text-align:right;
+     }
+   td.sc
+    {
+          font-size:20px;
+          text-align:left;
+    }
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<link rel="stylesheet" type="text/css" href="f1.css">
+<script type="text/javascript">
+
+function formvalidator()
+{
+	var letters= /^[a-zA-Z]+$/;
+	if(document.form1.fname.value == "" ||document.form1.fname.value == null)
+   	{
+      		alert("*Please Enter First Name");
+    		document.form1.fname.focus();
+      		return false;
+   	}
+ 	else
+ 	{
+  		if(!(document.form1.fname.value.match(letters)))
+   		{ 
+       			alert("*Only Alphabets Are Allowed");
+       			document.form1.fname.focus();
+       			return false;
+   		}
+ 	}
+
+	if(document.form1.lname.value == "" ||document.form1.lname.value == null)
+   	{
+      		alert("*Please Enter Last Name");
+      		document.form1.lname.focus();
+      		return false;
+   	}
+ 	else
+ 	{
+  		if(!(document.form1.lname.value.match(letters)))
+   		{
+      			alert("*Only Alphabets Are Allowed In Last Name");
+      			document.form1.lname.focus();
+      			return false;
+   		}
+ 	}
+
+
+	if(document.form1.Address.value == "" ||document.form1.Address.value == null)
+   	{
+      		alert("*Please Enter Address");
+      		document.form1.Address.focus();
+      		return false;
+   	}
+
+ 	if(document.form1.city.value == "" ||document.form1.city.value == null)
+   	{
+      		alert("*Please Enter City");
+      		document.form1.city.focus();
+      		return false;
+   	}
+ 	else
+ 	{
+  		if(!(document.form1.city.value.match(letters)))
+   		{
+      			alert("*Only Alphabets Are Allowed In City Name");
+      			document.form1.city.focus();
+      			return false;
+   		}
+ 	}
+
+	var em = document.forms["form1"]["email"].value;
+	var atpos = em.indexOf("@");
+	var dotpos = em.lastIndexOf(".");
+	if(em == null || em=="")
+	{
+		alert("Email field must not be empty");
+		document.form1.email.focus();
+		return false;
+	} 
+	if (atpos<1 || dotpos<atpos+2 || dotpos+2>=em.length)
+	{
+		alert("Enter proper e-mail address");
+		document.form1.email.focus();
+		return false;
+	}
+
+	var password = document.forms["form1"]["password"].value;
+	var passwordConfirm = document.forms["form1"]["passwordConfirm"].value;	
+	if(document.form1.password.value == "" ||document.form1.password.value == null)
+   	{
+      		alert("*Please Enter Password");
+      		document.form1.password.focus();
+      		return false;
+   	}
+	var pwdlen = document.forms["form1"]["password"].value.length;
+	if(pwdlen < 8)
+	{
+		alert("*Password should be of atleast 8 charachters");
+		document.form1.password.focus() ;
+		return false;
+	}
+	if(document.form1.passwordConfirm.value == "" ||document.form1.passwordConfirm.value == null)
+   	{
+      		alert("*Please Confirm Password");
+      		document.form1.passwordConfirm.focus();
+      		return false;
+   	}
+	if (password != passwordConfirm) {
+		alert("Passwords do not match.");
+		return false;
+	}
+	var mn = document.forms["form1"]["mobile"].value;
+	var mobNumLen = document.forms["form1"]["mobile"].value.length;
+	if(mn == "" || mn == null || isNaN(mn) || mn.length < 10 || mn.length >10 )
+	{
+		alert("*Please Enter Valid Mobile Number");
+		document.form1.mobile.focus() ;
+		return false;
+	} 
+ return(true);
+}
+
+</script>
+</head> 
+<body>
+<div id="myDIV"></div>
+<form action="actretdisp.php" name="form1" onsubmit="return formvalidator();" method="post">
+<center><h1>Sign up</h1></center>
+<table align="center" style="z-index: 1">
+  <div class="" style="color: black;">
+<tr>
+<td>First Name</td>
+<td><input type="text" name="fname"></td>
+</tr>
+<tr>
+<td>Last Name</td>
+<td><input type="text" name="lname"></td>
+</tr>
+<tr>
+<td>Address</td>
+<td><textarea rows="4" cols="50" name="Address"></textarea></td>
+</tr>
+<tr>
+<td>City</td>
+<td><input type="text" name="city">
+</td>
+</tr>
+<tr>
+<td>E-mail ID</td>
+<td><input type="text" name="email">
+</td>
+</tr>
+<tr>
+<td>Password</td>
+<td><input type="password" name="password" id="pass1">
+</td>
+</tr>
+<tr>
+<td>Confirm Password</td>
+<td><input type="password" name="passwordConfirm">
+</td>
+</tr>
+<tr>
+<td>Mobile no</td>
+<td><input id="mob" type="text" name="mobile">
+</td>
+</tr>
+<tr>
+<td>Gender</td>
+<td><input type="radio" name="sex" value="male" size="10">Male
+<input type="radio" name="sex" value="Female" size="10">Female</td>
+</tr>
+</div>
+</table>
+<div class="w3-container w3-center">
+<div class="button4">
+<input type="submit" name="submit" value="Submit"> 
+</div>
+</div>
+</form>
+</body>
+</html>
+
+
+							
+	
+
+

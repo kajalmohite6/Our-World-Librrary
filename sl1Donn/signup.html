@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" type="image/png" href="pictures/logo.png" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <script src="jquery-3.2.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+
+  body
+  {
+   background-image: url("pictures/image4.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   color: black;
+   font-family: "Times New Roman", Georgia, Serif;
+ }
+
+ table {
+  width: 60%;
+}
+
+table, th, td {
+  border: 0.1px  black;
+
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+tr:hover {background-color:  #ffd6cc}
+
+th {
+  background-color: black;
+  color: red;
+}
+
+th, td {
+  border-bottom: 0.1px;
+} 
+
+tr.noBorder td {
+  border: 0;
+}
+h1 {
+  color: white;
+  margin-left: 20px;
+  text-shadow: 3px 2px red;
+}
+.button4 {
+
+  padding: 8px 100px;
+}
+
+
+
+</style>
+
+
+
+
+
+
+<script type="text/javascript">
+ function formvalidator()
+ {
+  var letters= /^[a-zA-Z]+$/;
+  if(document.form1.fname.value == "" ||document.form1.fname.value == null)
+  {
+    alert("*Please Enter First Name");
+    document.form1.fname.focus();
+    return false;
+  }
+  else
+  {
+    if(!(document.form1.fname.value.match(letters)))
+    { 
+      alert("*Only Alphabets Are Allowed");
+      document.form1.fname.focus();
+      return false;
+    }
+  }
+
+  if(document.form1.lname.value == "" ||document.form1.lname.value == null)
+  {
+    alert("*Please Enter Last Name");
+    document.form1.lname.focus();
+    return false;
+  }
+  else
+  {
+    if(!(document.form1.lname.value.match(letters)))
+    {
+      alert("*Only Alphabets Are Allowed In Last Name");
+      document.form1.lname.focus();
+      return false;
+    }
+  }
+
+
+  if(document.form1.Address.value == "" ||document.form1.Address.value == null)
+  {
+    alert("*Please Enter Address");
+    document.form1.Address.focus();
+    return false;
+  }
+
+  if(document.form1.city.value == "" ||document.form1.city.value == null)
+  {
+    alert("*Please Enter City");
+    document.form1.city.focus();
+    return false;
+  }
+  else
+  {
+    if(!(document.form1.city.value.match(letters)))
+    {
+      alert("*Only Alphabets Are Allowed In City Name");
+      document.form1.city.focus();
+      return false;
+    }
+  }
+
+  var em = document.forms["form1"]["email"].value;
+  var atpos = em.indexOf("@");
+  var dotpos = em.lastIndexOf(".");
+  if(em == null || em=="")
+  {
+    alert("Email field must not be empty");
+    document.form1.email.focus();
+    return false;
+  } 
+  if (atpos<1 || dotpos<atpos+2 || dotpos+2>=em.length)
+  {
+    alert("Enter proper e-mail address");
+    document.form1.email.focus();
+    return false;
+  }
+
+  var password = document.forms["form1"]["password"].value;
+  var passwordConfirm = document.forms["form1"]["passwordConfirm"].value; 
+  if(document.form1.password.value == "" ||document.form1.password.value == null)
+  {
+    alert("*Please Enter Password");
+    document.form1.password.focus();
+    return false;
+  }
+  var pwdlen = document.forms["form1"]["password"].value.length;
+  if(pwdlen < 8)
+  {
+    alert("*Password should be of atleast 8 charachters");
+    document.form1.password.focus() ;
+    return false;
+  }
+  if(document.form1.passwordConfirm.value == "" ||document.form1.passwordConfirm.value == null)
+  {
+    alert("*Please Confirm Password");
+    document.form1.passwordConfirm.focus();
+    return false;
+  }
+  if (password != passwordConfirm) {
+    alert("Passwords do not match.");
+    return false;
+  }
+  var mn = document.forms["form1"]["mobile"].value;
+  var mobNumLen = document.forms["form1"]["mobile"].value.length;
+  if(mn == "" || mn == null || isNaN(mn) || mn.length < 10 || mn.length >10 )
+  {
+    alert("*Please Enter Valid Mobile Number");
+    document.form1.mobile.focus() ;
+    return false;
+  } 
+  return(true);
+}
+
+</script>
+</head> 
+
+
+<body>
+  <div class="row">
+    <div class="col-md-3">
+      <nav class="w3-bar-block w3-collapse" style="width:250px" id="mySidebar">
+        <div class="w3-container w3-display-container w3-padding-16">
+         
+          <img src="pictures/logo.png" style="width:200px;height:100px;">
+        </div>
+      </nav>
+    </div>
+
+    <div class="col-md-9">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#"></a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="about-us.php">About Us</a></li>
+            <li><a href="searchByCategory.php?Category=All">Product Categories </a></li>
+            <li><a href="contact.php">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="signin.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <form action="searchByTitle.php" method="get">
+        <div class="input-group custom-search-form">
+          <input type="text" class="form-control" name="query" value="">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="search">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+        </div>    
+      </form>
+    </div>
+  </div>
+  <br/>
+  <!-- Slide show part of the website -->
+  <section>
+
+    <div id="myDIV"></div>
+    <form action="actretdisp.php" name="form1" onsubmit="return formvalidator();" method="post">
+      <div style="background-color:#ff5c33;margin-left: 330px ;width: 550px;height: 600px">
+        <center><h1>Sign up</h1></center>
+        <table align="center" style="z-index: 1">
+          <div class="" style="color: black;">
+            <tr>
+              <td>First Name</td>
+              <td><input type="text" name="fname"></td>
+            </tr>
+            <tr>
+              <td>Last Name</td>
+              <td><input type="text" name="lname"></td>
+            </tr>
+            <tr>
+              <td>Address</td>
+              <td><textarea rows="4" cols="50" name="Address"></textarea></td>
+            </tr>
+            <tr>
+              <td>City</td>
+              <td><input type="text" name="city">
+              </td>
+            </tr>
+            <tr>
+              <td>E-mail ID</td>
+              <td><input type="text" name="email">
+              </td>
+            </tr>
+            <tr>
+              <td>Password</td>
+              <td><input type="password" name="password" id="pass1">
+              </td>
+            </tr>
+            <tr>
+              <td>Confirm Password</td>
+              <td><input type="password" name="passwordConfirm">
+              </td>
+            </tr>
+            <tr>
+              <td>Mobile no</td>
+              <td><input id="mob" type="text" name="mobile">
+              </td>
+            </tr>
+            <tr>
+              <td>Gender</td>
+              <td><input type="radio" name="sex" value="male" size="10">Male
+                <input type="radio" name="sex" value="Female" size="10">Female</td>
+              </tr>
+            </div>
+          </table>
+          <div class="w3-container w3-center">
+            <div class="button4">
+              <input type="submit" name="submit" value="Submit"> 
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+
+
+    <br/>
+
+    <footer class="w3-container w3-padding-64 w3-center  w3-xlarge">
+      <div class="row">
+        <div class="cols-xs-*"></div>
+        <div  class="cols-xs-4">
+          <a href="#"><i class="fa fa-facebook-official" ></i></a>
+          <a href="#"><i class="fa fa-pinterest-p"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-flickr"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+
+
+          <p class="w3-medium">
+            &copy OWL(Our World Library)<br>All Rights Reserved.
+          </p>
+        </div>
+        <div class="cols-xs-*"></div>
+
+      </div>  
+    </footer>
+
+  </body>
+  </html>

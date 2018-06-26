@@ -1,0 +1,127 @@
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="jquery-3.2.1.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+  .box{
+   width: 180px;
+   height: 180px;
+   background-color: black;
+   position: relative;
+ }
+ .textcolor{
+  text-align: center;
+  color: white;
+  font-family: times new roman;
+  text-decoration: none;
+}
+</style>
+
+</head>
+
+<body>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="width:250px" id="mySidebar">
+          <div class="w3-container w3-display-container w3-padding-16">
+            <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+            <img src="pictures/logo.png" style="width:200px;height:100px;">
+          </div>
+          <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+            <a href="#" class="w3-bar-item w3-button">Category1</a>
+            <a href="#" class="w3-bar-item w3-button">Category2</a>
+            <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+              Category3 <i class="fa fa-caret-down"></i>
+            </a>
+            <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+              <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Sub-Category1</a>
+              <a href="#" class="w3-bar-item w3-button">Sub-Category1</a>
+              <a href="#" class="w3-bar-item w3-button">Sub-Category2</a>
+              <a href="#" class="w3-bar-item w3-button">Sub-Category3</a>
+            </div>
+            
+          </div>
+          
+          
+        </nav>
+      </div>
+
+      <div class="col-md-9">
+        <br><br><br><br><br><br>
+        <div class="input-group custom-search-form">
+          <input type="text" class="form-control" name="query" value="">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="search">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+
+        </div>
+        <br><br><br>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="textcolor">  
+              <div class="col-md-3">
+                <a href="#">
+                  <div class="box">  
+                    <i class="material-icons" style="font-size:100px;color: white">account_balance</i>
+                    <br>
+                    <h3>Website</h3>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-3">
+                <a href="#">
+                  <div class="box">  
+                    <i class="material-icons" style="font-size:100px;color: white">computer</i>
+                    <br>
+                    <h3>No. of Views</h3>
+                  </div>
+                </a>
+              </div>
+              
+              <div class="col-md-3">
+                <a href="#">
+                  <div class="box">
+                   
+                    <i class="material-icons" style="font-size:100px;color: white">add_shopping_cart</i>
+                    <br>
+                    <h3>No. of buys</h3>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-3">
+                <a href="#">
+                  <div class="box">  
+                    <i class="material-icons" style="font-size:100px;color: white">question_answer</i>
+                    <br>
+                    <h3>Messages</h3>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+  </html>
